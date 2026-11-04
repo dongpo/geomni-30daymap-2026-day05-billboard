@@ -1,0 +1,1 @@
+SELECT * FROM read_parquet('s3://overturemaps-us-west-2/release/2026-10-21.0/theme=buildings/type=building/*',hive_partitioning=true) WHERE bbox.xmin<121.573 AND bbox.xmax>121.557 AND bbox.ymin<25.043 AND bbox.ymax>25.027

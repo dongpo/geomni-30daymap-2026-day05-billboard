@@ -1,0 +1,38 @@
+Geomni × #30DayMapChallenge 2026
+Day 05｜Senses: Sight｜待本人審稿，未發 Facebook
+
+廣告掛得越高，真的越多人看見？
+
+走在信義區，抬頭就會看到大樓外牆。假如今天換成我來選廣告位置，會挑高一點的樓層，還是朝向人潮更多的那條街？
+
+這次我把問題做成一個可以動手玩的 GIS 實驗：在信義經貿大樓的兩面外牆放上「假想看板」，讓你調整高度，再改變北側、東南側、西南側街段的人流權重，看看結果怎麼變。
+
+地圖裡的建築與道路是真實資料，來自 Overture Maps 2026-10-21.0。看板位置是實驗設定，人流則是你操控的假設，沒有使用手機信令資料。
+
+【地圖怎麼算？】
+我用 DuckDB 從雲端 GeoParquet 擷取建物及建築分部，投影到公尺座標後，以 Python／Shapely 建立簡化建築柱體。從 786 個道路採樣點、離地 1.6 公尺的位置，朝看板中心與四角連出視線，檢查沿途是否被建築擋住，也限制看板朝向、觀看距離與仰角。
+
+地圖上的青綠點代表五個看板目標點都可視，金色是部分可視，灰色則是遮蔽或不符合觀看角度。這是幾何上的可能看見，還不是「真的注意到廣告」。
+
+【有趣的是，升高不一定更好】
+同樣朝北的外牆、同樣的人流權重、未知建物都假設 15 公尺時，看板中心從 20 公尺升到 30 公尺，這個模型的加權可視指數從 15.05 略降到 14.76。部分近距離位置超過了我們設定的仰角門檻。
+
+差異很小，也受採樣與假設影響，不能拿來判定真實最佳樓層；但它提醒我，單看高度，可能漏掉街道位置與觀看角度。
+
+【你也可以改變答案】
+把北側街段的人流權重拉高，再換另一面外牆試試看。先保存 A，再調整 B，就能比較兩組完整情境。指數是各區可視比例依人流權重加權的結果，不是觀看人數，更不是廣告報價。
+
+這次用 MapLibre 呈現 3D 建築；30 組遮蔽結果預先計算，人流加權則在瀏覽器即時完成，所以 GitHub 網頁不需要另外連分析伺服器。
+
+資料限制也放在介面上：904 個建築體中，只有 22 個直接有高度，523 個由樓層數 × 3 公尺推估，359 個缺高度、必須設定情境。地面先假設平坦，還沒有樹木、車輛與現場人行道調查。這是一個可檢查假設的原型，還不是商業選址模型。
+
+如果是你，會花更多預算把看板掛高，還是換到人潮經過的那一面？
+
+互動實驗：https://dongpo.github.io/geomni-30daymap-2026-day05-billboard/
+程式與資料：https://github.com/dongpo/geomni-30daymap-2026-day05-billboard
+
+資料：Overture Maps Buildings / Transportation，2026-10-21.0；© Overture Maps / OpenStreetMap contributors，ODbL 1.0。逐筆建物來源及查詢、輸出隨專案提供。
+技術：https://docs.overturemaps.org/guides/buildings/ ｜ https://duckdb.org/docs/stable/core_extensions/spatial/overview ｜ https://shapely.readthedocs.io/ ｜ https://maplibre.org/
+靈感：日本 PLATEAU 戶外廣告可視性與人流案例（https://www.mlit.go.jp/plateau/use-case/uc22-004/）；本作使用簡化建物，不等同該案例的 LOD2 或人流實測。
+
+#30DayMapChallenge #Geomni #GIS #OvertureMaps #MapLibre #3DGIS #CloudNativeGIS

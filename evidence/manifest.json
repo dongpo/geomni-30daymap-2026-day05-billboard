@@ -1,0 +1,8 @@
+{
+  "building.parquet": "7a48a3af5197984b4c4afb50b60156e3ad5a5cd5a41078495ec80e013a1de35d",
+  "building_part.parquet": "9a18156cfe1e079a33f92a9af5939b9536908870f0c1404e893a4f1c5eebcb1b",
+  "web/buildings.geojson": "ebdb0b909316f134ae0e7d00c373bd4a1e72ddbed5017ef637a7d823446fa0e4",
+  "web/roads.geojson": "1d7d9e1828b940ae084970b39f96e7a98e5aaebcc4bc878dbf5848d3bc93ef1d",
+  "web/samples.geojson": "3986774ab0acec2ed470935afa990b6d26f9fdc5bcf390dbeef082ad0869263d",
+  "web/analysis.json": "9a56510e285346912b25bc0b82a4b448f1dbbc926894b3d3fe0442d45cc9a197"
+}

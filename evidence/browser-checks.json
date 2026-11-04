@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-04",
+  "checks": [
+    "height slider updates result",
+    "weights update score",
+    "save A preserves full settings while B changes",
+    "all weights zero => undefined",
+    "face B + unknown 30m => score 10.7, 88 visible",
+    "reset restores default values"
+  ],
+  "status": "passed"
+}

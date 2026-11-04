@@ -1,0 +1,8 @@
+geopandas==1.1.2
+shapely==2.1.2
+pyproj==3.7.2
+numpy==2.4.0
+matplotlib==3.10.8
+pyarrow==16.1.0
+# Optional: remote acquisition script uses DuckDB 2.0.0
+duckdb==2.0.0
