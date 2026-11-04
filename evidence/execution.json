@@ -117,7 +117,7 @@
   "max_range_m": 300,
   "max_off_normal_deg": 60,
   "max_elevation_deg": 45,
-  "seconds": 1.57,
+  "seconds": 1.5,
   "sources_bbox": [
     121.557,
     25.027,
