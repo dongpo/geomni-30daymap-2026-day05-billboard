@@ -1,0 +1,16 @@
+[
+  {
+    "face": 0,
+    "bearing": 2.2420686407054973,
+    "host_overlap_m2": 0.0,
+    "wall_clearance_m": 0.2999999993304542,
+    "outward_normal_and_back_occlusion": "pass"
+  },
+  {
+    "face": 1,
+    "bearing": 182.24989830855733,
+    "host_overlap_m2": 0.0,
+    "wall_clearance_m": 0.299999999078172,
+    "outward_normal_and_back_occlusion": "pass"
+  }
+]
